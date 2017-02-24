@@ -29,3 +29,8 @@ label {
     font-size: 30;
     color: red;
 }
+
+input[type=submit] {
+  color: #900;
+  font-weight: bold;
+}
