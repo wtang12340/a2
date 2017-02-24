@@ -46,6 +46,7 @@ if($form->isSubmitted()){
 
     #Generate the password with letters only
     $randomLetterKeys = array_rand($alphabet,$numberOfLetters);
+    shuffle($randomLetterKeys);
     foreach ($randomLetterKeys as $index => $number) {
         $password .= $alphabet[$number];
     }
