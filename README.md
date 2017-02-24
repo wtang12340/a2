@@ -1,2 +1,1 @@
-# a2
-Assignment 2
+# Assignment 2 for DWA-15 By William Tang

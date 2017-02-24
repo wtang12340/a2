@@ -24,3 +24,8 @@ label {
     font-size: 16;
     font-weight: bold;
 }
+
+.output {
+    font-size: 30;
+    color: red;
+}
