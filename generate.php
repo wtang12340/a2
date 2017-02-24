@@ -5,11 +5,18 @@ require('Form.php');
 
 $form = new DWA\Form($_GET);
 
+$errors = [];
 
 if($form->isSubmitted()){
     if($_GET){
         $_GET = $form->sanitize($_GET);
     }
+
+    $errors = $form->validate(
+        [
+            'numberOfLetters' => 'required|min:3|max:20'
+        ]
+    );
 
     #Number of letters the user wanted.
     $numberOfLetters = $form->get('numberOfLetters');
@@ -67,7 +74,11 @@ if($form->isSubmitted()){
 	<div class="container">
 		<h1>Spongebob's Password Generator</h1>
         <img src='images/spongebob.jpg' alt='Spongebob'>
-        <p class="output"> YOUR PASSWORD IS: <?=$password?> <p>
+        <?php if(!$errors): ?>
+            <p class="output"> YOUR PASSWORD IS: <?=$password?> <p>
+        <?php elseif($form->isSubmitted()): ?>
+            <p class="output"> ERROR: INVALID NUMBER OF LETTERS <p>
+        <?php endif; ?>
 	</div>
 </body>
 </html>
