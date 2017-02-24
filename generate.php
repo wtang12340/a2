@@ -14,7 +14,7 @@ if($form->isSubmitted()){
 
     $errors = $form->validate(
         [
-            'numberOfLetters' => 'required|min:3|max:20'
+            'numberOfLetters' => 'required|min:2|max:21'
         ]
     );
 
